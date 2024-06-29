@@ -6,7 +6,7 @@ const productsRoutes = new Router();
 const productsController = new ProductController();
 
 productsRoutes.post("/", productsController.criar.bind(productsController));
-productsRoutes.get("/:id", productsController.pesquisar.bind(productsController));
+productsRoutes.get("/", productsController.listarTodos.bind(productsController));
 
 
 
