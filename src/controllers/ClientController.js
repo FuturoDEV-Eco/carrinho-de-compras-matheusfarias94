@@ -18,7 +18,8 @@ class ClientController extends Database {
       );
       console.log(dados);
       response.status(201).json({ mensagem: `Cliente Cadastrado com sucesso` });
-    } catch {
+    } catch (error) {
+      console.error("Erro ao cadastrar o cliente:", error);
       response
         .status(500)
         .json({ mensagem: ` Não foi possivel cadastrar o cliente` });
@@ -34,7 +35,7 @@ class ClientController extends Database {
       if (clients.rows.length === 0) {
         return response
           .status(404)
-          .json({ mensagem: "Não foi ncontrado um cliente" });
+          .json({ mensagem: "Não foi encontrado um cliente" });
       }
       response.json(clients.rows[0]);
     } catch {
