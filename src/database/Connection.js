@@ -8,7 +8,7 @@ class Database {
       host: "localhost",
       database: "api_labCommerce",
       port: 5432
-    });
+    }); 
   }
 }
 
