@@ -27,10 +27,10 @@ class ClientController extends Database {
   }
   async pesquisar(request, response) {
     try {
-      const id = request.params.id;
+      const id_clients = request.params.id;
       const clients = await this.database.query(
-        "select * from clients where id = $1",
-        [id]
+        "select * from clients where id_clients = $1",
+        [id_clients]
       );
       if (clients.rows.length === 0) {
         return response
